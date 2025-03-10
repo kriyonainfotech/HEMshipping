@@ -1,0 +1,41 @@
+.text-sec {
+  color: #10505d;
+}
+.bg-sec {
+  background-color: #10505d;
+}
+.text-pri {
+  color: #ec9857;
+}
+.bg-pri {
+  background-color: #ec9857;
+  transition: background-color 0.3s ease-in-out;
+}
+.hover-text-pri {
+  transition: all 0.2s;
+}
+.hover-text-pri:hover {
+  color: #ec9857;
+}
+
+.hover-bg-pri:hover {
+  background-color: #f18c3e;
+}
+
+@media (max-width: 640px) {
+  .xs-inline {
+    display: inline;
+    color: #ec9857;
+  }
+}
+
+.service-three-shape {
+  z-index: 2;
+  background-image: url(https://cdn.prod.website-files.com/676ce2d…/678219e…_flat-bottom-cut-shape.png);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 56px 56px;
+  position: absolute;
+  inset: 0;
+  transform: translate(0);
+}
