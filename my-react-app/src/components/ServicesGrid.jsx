@@ -18,26 +18,26 @@ const ServicesSection = () => {
       image: '/airport-1152251_1280.jpg',
       description: 'Express worldwide air delivery'
     },
-    // {
-    //   title: 'Project Cargo',
-    //   image: '/port-6670684_1280.jpg',
-    //   description: 'Expertise in handling oversized & heavy shipments.'
-    // },
     {
-      title: 'Customs Clearance',
-      image: '/employees-working-warehouse.jpg',
-      description: 'Hassle-free customs formalities for timely cargo release.'
+      title: 'Project Cargo',
+      image: '/port-6670684_1280.jpg',
+      description: 'Expertise in handling oversized & heavy shipments.'
     },
     // {
-    //   title: 'Inland Transportation',
-    //   image: '/airport-1152251_1280.jpg',
-    //   description: 'Efficient transport services to move cargo to its destination.'
+    //   title: 'Customs Clearance',
+    //   image: '/employees-working-warehouse.jpg',
+    //   description: 'Hassle-free customs formalities for timely cargo release.'
     // },
     {
-      title: 'Warehousing & Distribution',
-      image: '/photorealistic-scene-with-warehouse-logistics-operations.jpg',
-      description: 'Secure storage & streamlined distribution solutions.'
+      title: 'Inland Transportation',
+      image: '/airport-1152251_1280.jpg',
+      description: 'Efficient transport services to move cargo to its destination.'
     },
+    // {
+    //   title: 'Warehousing & Distribution',
+    //   image: '/photorealistic-scene-with-warehouse-logistics-operations.jpg',
+    //   description: 'Secure storage & streamlined distribution solutions.'
+    // },
     // Add more services...
   ];
 
@@ -59,7 +59,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="w-full py-20 px-4 ">
+    <section className="w-full py-20 px-4 bg-gray-50">
       {/* <img
         src="/js/pattern1.png"
         alt="Pattern"

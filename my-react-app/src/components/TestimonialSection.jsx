@@ -1,5 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { div } from "framer-motion/client";
 import { useEffect, useState } from "react";
+import { GrServicePlay } from "react-icons/gr";
+import CounterSection from "./CounterSection";
+import { FaQuoteRight } from "react-icons/fa";
 
 const TestimonialSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -29,13 +33,13 @@ const TestimonialSection = () => {
     // Add more testimonials...
   ];
 
-    useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
-        setActiveIndex(prev => (prev + 1) % testimonials.length);
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(interval);
-     }, []);
-    
+  }, []);
+
   const variants = {
     enter: { opacity: 0, x: 100 },
     center: { opacity: 1, x: 0 },
@@ -43,16 +47,22 @@ const TestimonialSection = () => {
   };
 
   return (
-    <section className="min-h-screen bg-white py-20 px-4">
-      <div className="container mx-auto flex flex-col lg:flex-row gap-12">
+  
+    <section className="min-h-screen bg-sec mx-6 mt-36 rounded-xl pt-24 pb-12 px-4 relative flex items-center">
+      <div className="hidden lg:flex absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-transparent rounded-xl pb-20">
+        <CounterSection />
+      </div>
+
+      <div className="container mx-auto flex flex-col lg:flex-row gap-12 items-stretch">
         {/* Left Side */}
-        <div className="lg:w-1/4 flex flex-col justify-between">
+        <div className="lg:w-1/4 flex-grow-0 flex flex-col justify-between bg-gray-200 p-10 rounded-xl relative bg-[url('/js/pattern2.jpg')] bg-no-repeat bg-bottom-right z-20">
           <div>
-            <span className="text-sm uppercase tracking-widest text-blue-600 font-semibold">
+            <span className="flex items-center gap-2 text-md text-gray-800 font-semibold tracking-wide poppins">
+              <GrServicePlay className="font-bold text-cyan-900 text-lg" />
               Client Testimonials
             </span>
-            <h2 className="text-4xl font-bold text-blue-900 mt-4 mb-8">
-              What Clients Say About Us
+            <h2 className="text-4xl space font-bold text-gray-900 mt-4 mb-8">
+              What Clients Say <span className="text-sec">About Us</span>
             </h2>
           </div>
 
@@ -64,7 +74,7 @@ const TestimonialSection = () => {
                     (prev - 1 + testimonials.length) % testimonials.length
                 )
               }
-              className="p-3 rounded-full bg-blue-100 hover:bg-blue-200 transition-colors"
+              className="p-3 rounded-full bg-gray-300  hover:bg-gray-100 transition-colors"
             >
               ←
             </button>
@@ -72,7 +82,7 @@ const TestimonialSection = () => {
               onClick={() =>
                 setActiveIndex((prev) => (prev + 1) % testimonials.length)
               }
-              className="p-3 rounded-full bg-blue-100 hover:bg-blue-200 transition-colors"
+              className="p-3 rounded-full bg-gray-300  hover:bg-gray-100 transition-colors"
             >
               →
             </button>
@@ -80,7 +90,7 @@ const TestimonialSection = () => {
         </div>
 
         {/* Right Side */}
-        <div className="lg:w-3/4 relative">
+        <div className="lg:w-3/4 flex-grow relative z-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -89,21 +99,31 @@ const TestimonialSection = () => {
               animate="center"
               exit="exit"
               transition={{ duration: 0.5 }}
-              className="bg-gradient-to-br from-blue-900 to-blue-950 rounded-xl p-12 text-white"
+              className="bg-gray-200 rounded-xl p-12 text-gray-900"
             >
               {/* Client Info */}
-              <div className="border-b border-blue-700 pb-6 mb-8">
-                <h3 className="text-2xl font-bold">
-                  {testimonials[activeIndex].name}
-                </h3>
-                <p className="text-blue-300">
-                  {testimonials[activeIndex].role}
-                </p>
+              <div className="flex justify-between border-b border-gray-300 pb-6 mb-8">
+                <div>
+                  <h3 className="text-2xl font-semibold poppins">
+                    {testimonials[activeIndex].name}
+                  </h3>
+                  <p className="text-gray-600">
+                    {testimonials[activeIndex].role}
+                  </p>
+                </div>
+
+                <div className="flex gap-1 text-yellow-600 text-3xl">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>
+                      {i < testimonials[activeIndex].rating ? "★" : "☆"}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               {/* Testimonial Content */}
-              <div className="px-8 py-12 border-b border-blue-700">
-                <p className="text-xl italic text-center leading-relaxed">
+              <div className="px-8 py-12 border-b border-gray-300">
+                <p className="text-xl tracking-wide text-center space leading-relaxed">
                   "{testimonials[activeIndex].text}"
                 </p>
               </div>
@@ -116,28 +136,8 @@ const TestimonialSection = () => {
                     alt={testimonials[activeIndex].name}
                     className="w-16 h-16 rounded-full object-cover"
                   />
-                  <div className="flex gap-1 text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i}>
-                        {i < testimonials[activeIndex].rating ? "★" : "☆"}
-                      </span>
-                    ))}
-                  </div>
                 </div>
-
-                <svg
-                  className="w-20 h-20 text-blue-600 opacity-50"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1}
-                    d="M7 4v16M17 4v16M3 8h4a2 2 0 012 2v4a2 2 0 01-2 2H3M17 8h4a2 2 0 012 2v4a2 2 0 01-2 2h-4"
-                  />
-                </svg>
+                <FaQuoteRight className="text-3xl" />
               </div>
             </motion.div>
           </AnimatePresence>

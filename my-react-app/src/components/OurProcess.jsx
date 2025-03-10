@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { GrServicePlay } from "react-icons/gr";
+import CounterSection from "./CounterSection";
 
 
 const OurProcess = () => {
@@ -40,7 +41,7 @@ const OurProcess = () => {
 
   return (
 
-    <section className="w-full py-20 px-4 bg-gray-50 relative">
+    <section className="w-full py-20 px-4 bg-white relative">
       {/* Full-width Dotted Line */}
       <motion.div
         initial={{ width: 0 }}
@@ -101,6 +102,7 @@ const OurProcess = () => {
           ))}
         </div>
       </div>
+
     </section>
   );
 };

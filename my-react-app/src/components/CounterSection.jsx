@@ -9,9 +9,9 @@ const CounterSection = () => {
   ];
 
   return (
-    <section className="w-full bg-gray-50">
+    <section className="w-full mt-20 lg:mt-0">
       <div className="container mx-auto ">
-        <div className="bg-pri flex flex-col md:flex-row justify-center items-center gap-60 text-white py-10 px-8 rounded-xl">
+        <div className="bg-pri flex flex-col md:flex-row justify-center items-center gap-8 lg:gap-60 text-white py-10 px-8 rounded-xl">
           {counters.map((counter, index) => (
             <motion.div
               key={index}
