@@ -129,7 +129,7 @@
 import { motion } from "framer-motion";
 import { FaAnchor, FaWarehouse, FaShip, FaCertificate } from "react-icons/fa";
 
-const AboutUs = () => {
+const AboutSection = () => {
   return (
     <section className="bg-white py-20 px-4">
       <div className="container mx-auto">
@@ -217,7 +217,10 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               className="text-center p-6 bg-white shadow-lg rounded-xl"
             >
-              <div className="text-cyan-600 mb-4">{service.icon}</div>
+              {/* Center Icon */}
+              <div className="flex justify-center items-center text-cyan-600 mb-4">
+                {service.icon}
+              </div>
               <h3 className="text-xl font-bold mb-2">{service.title}</h3>
               <p className="text-gray-600">{service.text}</p>
             </motion.div>
@@ -267,4 +270,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AboutSection;

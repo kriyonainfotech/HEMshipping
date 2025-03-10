@@ -7,15 +7,13 @@ import OurProcess from '../components/OurProcess'
 import CounterSection from '../components/CounterSection'
 import TestimonialSection from '../components/TestimonialSection'
 import AboutSection from '../components/AboutSection'
-import AboutUs from '../components/AboutSection'
 
 const Home = () => {
   return (
     <div>
       <Header />
       <HeroBanner />
-      <AboutUs/>
-      {/* <AboutSection /> */}
+      <AboutSection />
       <ServicesSection />
       <OurProcess />
       {/* <CounterSection /> */}
