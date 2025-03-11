@@ -16,11 +16,10 @@ const Home = () => {
       <AboutSection />
       <ServicesSection />
       <OurProcess />
-      {/* <CounterSection /> */}
-      <TestimonialSection   />
+      <TestimonialSection />
       <Footer />
     </div>
-  )
+  );
 }
 
 export default Home
