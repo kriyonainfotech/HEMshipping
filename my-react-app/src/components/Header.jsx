@@ -16,11 +16,15 @@ const Header = () => {
             <div className="md:flex space-x-6">
               <div className="flex flex-wrap items-center space-x-2 cursor-pointer hover:text-gray-200 transition-colors duration-200 poppins">
                 <IoCall className="text-lg" />
-                <span className="text-sm hidden sm:inline">+917435918212</span>
+                <span className="text-sm hidden sm:inline">
+                  ZALA HARSHRAJSINH : +917435918212
+                </span>
               </div>
               <div className="flex flex-wrap items-center space-x-2 cursor-pointer hover:text-gray-200 transition-colors duration-200 poppins">
                 <IoMdMailUnread className="text-lg " />
-                <span className="text-sm hidden sm:inline">+919825897999</span>
+                <span className="text-sm hidden sm:inline">
+                  JADEJA GIRIRAJSINH : +919825897999
+                </span>
               </div>
             </div>
 
@@ -28,7 +32,7 @@ const Header = () => {
               <FaLocationDot />
               <span className="text-sm hidden sm:inline">
                 201-202/212, Varunisha Crossway, Plot # 589, Ward 12-C,
-                Gandhidham - Kachchh - 370201.
+                Gandhidham - Kachchh - 370 201.
               </span>
             </div>
           </div>
