@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -10,7 +10,7 @@ import { MdOutlineWhatsapp } from "react-icons/md";
 import { MdMail } from "react-icons/md";
 import { GrServicePlay } from "react-icons/gr";
 
-const services = ["SeaFreight", "Service 2", "Service 3", "Service 4"];
+const services = ["Sea Freight", "Air Freight", "Project Cargo", "Customs Clearance", "Inland Transportation", "Warehousing Distribution"];
 const socialMedia = [
   { name: "Facebook", icon: <FaFacebookF /> },
   { name: "Instagram", icon: <IoLogoInstagram /> },
@@ -19,6 +19,7 @@ const socialMedia = [
 ];
 const SeaFreight = () => {
   const { serviceName } = useParams();
+  const navigate = useNavigate();
 
   // Animation variants
   const staggerContainer = {
@@ -39,7 +40,7 @@ const SeaFreight = () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen">
+      <div className="min-h-screen overflow-x-hidden">
         {/* Hero Section */}
         <section className="relative h-[500px] flex items-center justify-center text-center overflow-hidden">
           <video
@@ -50,7 +51,7 @@ const SeaFreight = () => {
             playsInline
           >
             <source
-              src="/port/6618026-uhd_3840_2160_24fps - Trim.mp4"
+              src="/port/sea.mp4"
               type="video/mp4"
             />
           </video>
@@ -64,8 +65,8 @@ const SeaFreight = () => {
           </motion.h1>
         </section>
 
-        <section className="flex flex-col md:flex-row items-start justify-start bg-gradient-to-r from-gray-50 to-cyan-100 p-6 md:p-8 pt-32 md:pt-30">
-          <div className="container mx-auto flex flex-col md:flex-row items-start gap-12">
+        <section className="flex flex-col md:flex-row items-start justify-start bg-gradient-to-r from-gray-50 to-cyan-100 p-6 md:p-8 pt-32 md:pt-32">
+          <div className="container mx-auto flex flex-col md:flex-row items-start gap-12 min-w-0">
             {/* Left Side: Interactive Cards */}
             <div className="w-full md:w-1/4 space-y-6">
               {/* Services List Card */}
@@ -86,11 +87,7 @@ const SeaFreight = () => {
                       className="cursor-pointer px-4 py-2 rounded-lg transition border border-gray-300 duration-300 text-gray-700 hover:text-cyan-900 hover:bg-gray-100"
                       whileHover={{ scale: 1.05 }}
                     >
-                      {service === "Sea Freight" && (
-                        <span className="bg-pri">
-                          Sea Freight
-                        </span>
-                      )}
+                      {service}
                     </motion.li>
                   ))}
                 </ul>
@@ -141,23 +138,19 @@ const SeaFreight = () => {
             </div>
 
             {/* Right Side: Main Content */}
-            <div className="w-full md:w-3/4 space-y-6">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
+            <div className="w-full md:w-3/4 space-y-6 min-w-0">
+              <motion.div className="flex flex-col justify-between gap-8" initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="flex flex-col justify-between gap-8"
-              >
+                transition={{ duration: 0.8, ease: "easeOut" }}>
                 <div className="relative w-full">
                   <motion.img
                     src="/port/port4.jpg"
                     alt="Sea Freight"
-                    className="rounded-xl shadow-2xl w-full h-[250px] md:h-[500px] object-cover"
+                    className="rounded-xl shadow-2xl w-full h-[250px] md:h-[500px] object-cover max-w-full"
                   />
                 </div>
-
                 <div>
-                  <h2 className="text-2xl md:text-4xl font-bold text-gray-800 leading-tight">
+                  <h2 className="text-2xl space md:text-4xl font-bold text-gray-800 leading-tight">
                     Sea Freight Solutions
                   </h2>
                   <div className="text-gray-700 text-md tracking-wide space">
@@ -183,7 +176,7 @@ const SeaFreight = () => {
 
                 {/* Benefits Section */}
                 <div>
-                  <h2 className="text-2xl md:text-4xl font-bold text-gray-800 leading-tight">
+                  <h2 className="text-2xl space md:text-4xl font-bold text-gray-800 leading-tight">
                     Benefits of Our Services
                   </h2>
                   <div className="text-gray-700 text-md tracking-wide space">
@@ -216,39 +209,39 @@ const SeaFreight = () => {
           </div>
         </section>
 
-        {/* New: Stats Section */}
-        <section className="py-28 bg-gradient-to-r from-cyan-900 to-cyan-700 text-white m-6 rounded-xl">
-          <motion.div
-            className="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ staggerChildren: 0.2 }}
-            viewport={{ once: true }}
-          >
-            {[
-              "Countries Served",
-              "Annual Shipments",
-              "Client Satisfaction",
-            ].map((stat, index) => (
-              <motion.div
-                key={stat}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ type: "spring", stiffness: 100 }}
-                className="p-6 border border-white/20 rounded-lg"
-              >
-                <div className="text-4xl font-bold mb-2">
-                  {["150+", "10,000+", "98%"][index]}
-                </div>
-                <div className="text-lg">{stat}</div>
-              </motion.div>
-            ))}
-          </motion.div>
+        {/* Stats Section */}
+        <section className="py-28 bg-gradient-to-r from-cyan-900 to-cyan-700 text-white">
+          <div className="container mx-auto px-4">
+            <motion.div className="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-center"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ staggerChildren: 0.2 }}
+              viewport={{ once: true }}>
+              {[
+                "Countries Served",
+                "Annual Shipments",
+                "Client Satisfaction",
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 100 }}
+                  className="p-6 border border-white/20 rounded-lg"
+                >
+                  <div className="text-4xl font-bold mb-2">
+                    {["150+", "10,000+", "98%"][index]}
+                  </div>
+                  <div className="text-lg">{stat}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </section>
 
-        {/* New: Process Timeline Section */}
-        <section className=" bg-gradient-to-r from-cyan-50 to-gray-100 py-16">
-          <div className="container mx-auto px-6">
+        {/* Process Timeline Section */}
+        <section className="bg-gradient-to-r from-cyan-50 to-gray-100 py-16">
+          <div className="container mx-auto px-4">
             <motion.h2
               className="text-4xl space font-bold text-cyan-900 text-center mb-12"
               initial={{ opacity: 0 }}
@@ -288,37 +281,34 @@ const SeaFreight = () => {
         </section>
 
         {/* Contact Section */}
-        <motion.section
-          className="bg-gradient-to-r from-gray-900 to-gray-600 text-white py-16 text-center m-6 rounded-xl"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <div className="container mx-auto px-6">
-            {/* Heading */}
-            <h2 className="text-4xl font-bold">Get in Touch</h2>
-            <p className="mt-4 text-md md:text-lg text-gray-200 max-w-2xl mx-auto">
-              Need reliable logistics solutions? Our team is here to help with
-              all your shipping and freight needs. Contact us today for a custom
-              quote!
-            </p>
+        <section className="bg-gradient-to-r from-cyan-900 to-cyan-700 text-white py-16">
+          <div className="container mx-auto px-4 rounded-xl">
+            <div className="container mx-auto px-6">
+              {/* Heading */}
+              <h2 className="text-4xl text-center space font-bold">Get in Touch</h2>
+              <p className="mt-4 text-md md:text-lg lato text-center text-gray-200 max-w-2xl mx-auto">
+                Need reliable logistics solutions? Our team is here to help with
+                all your shipping and freight needs. Contact us today for a custom
+                quote!
+              </p>
 
-            {/* CTA Buttons */}
-            <div className="mt-8 flex justify-center items-center gap-6">
-              <button
-                className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-pri text-white shadow-2xl transition-all 
-  before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-300/40 before:duration-500 before:ease-out 
+              {/* CTA Buttons */}
+              <div className="mt-8 flex justify-center items-center gap-6">
+                <button
+                  className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-pri text-white shadow-2xl transition-all
+  before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-300/40 before:duration-500 before:ease-out
   hover:shadow-orange-900 hover:before:h-56 hover:before:w-56 rounded-xl"
-              >
-                <span className="relative z-10 font-semibold">Get a Quote</span>
-              </button>
+                >
+                  <span className="relative z-10 font-semibold">Get a Quote</span>
+                </button>
 
-              <button className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden border-2 border-white text-white shadow-lg transition-all hover:bg-white hover:text-cyan-900 rounded-xl">
-                <span className="relative z-10 font-semibold">Contact Us</span>
-              </button>
+                <button className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden border-2 border-white text-white shadow-lg transition-all hover:bg-white hover:text-cyan-900 rounded-xl">
+                  <span className="relative z-10 font-semibold">Contact Us</span>
+                </button>
+              </div>
             </div>
           </div>
-        </motion.section>
+        </section>
       </div>
       <Footer />
     </>

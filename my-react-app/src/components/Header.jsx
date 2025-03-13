@@ -41,7 +41,7 @@ const Header = () => {
         <div className="container mx-auto px-12 py-4 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/logo2.JPG" alt="Shipping Logo" className="h-22" />
+            <Link to={'/'}> <img src="/logo2.JPG" alt="Shipping Logo" className="h-22" /></Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -59,19 +59,13 @@ const Header = () => {
               Services
             </Link>
             <Link
-              href="#"
-              className="text-gray-700 hover-text-pri font-semibold"
-            >
-              Tracking
-            </Link>
-            <Link
               to={"/about"}
               className="text-gray-700 hover-text-pri font-semibold"
             >
               About Us
             </Link>
             <Link
-              href="#"
+              to={"/contact"}
               className="text-gray-700 hover-text-pri font-semibold"
             >
               Contact
@@ -108,27 +102,23 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden bg-gray-100 border-t border-gray-200 overflow-hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`lg:hidden bg-gray-100 border-t border-gray-200 overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            }`}
         >
           <div className="w-full flex justify-center text-center">
             <div className="px-8 py-4 flex flex-col space-y-4">
-              <a href="#" className="text-pri font-semibold border-b">
+              <Link to={'/'} className="text-pri font-semibold border-b">
                 Home
-              </a>
-              <a href="#" className="text-gray-700 hover-text-pri">
+              </Link>
+              <Link to={'/services'} className="text-gray-700 hover-text-pri">
                 Services
-              </a>
-              <a href="#" className="text-gray-700 hover-text-pri">
-                Tracking
-              </a>
-              <a href="#" className="text-gray-700 hover-text-pri">
+              </Link>
+              <Link to={'/about'} className="text-gray-700 hover-text-pri">
                 About Us
-              </a>
-              <a href="#" className="text-gray-700 hover-text-pri">
+              </Link>
+              <Link to={'/contact'} className="text-gray-700 hover-text-pri">
                 Contact
-              </a>
+              </Link>
               <button className="bg-sec text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300 mt-2">
                 Get a Quote
               </button>
@@ -300,9 +290,9 @@ export default Header;
 //       >
 //         <div className="w-full flex justify-center text-center">
 //           <div className="px-8 py-4 flex flex-col space-y-4">
-//             <a href="#" className="text-pri font-semibold border-b">
+//             <Link href="#" className="text-pri font-semibold border-b">
 //               Home
-//             </a>
+//             </Link>
 //             <button
 //               onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
 //               className="text-gray-700 hover:text-pri"

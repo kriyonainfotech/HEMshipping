@@ -5,6 +5,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AboutPage from './pages/AboutPage';
 import ServicePage from "./pages/ServicePage";
 import SeaFreight from "./pages/SeaFreight";
+import AirFreight from './pages/AirFreight';
+import ProjectCargo from './pages/ProjectCargo';
+import CustomsClearance from './pages/CustomsClearance';
+import InlandService from './pages/Inland';
+import Warehousing from './pages/Warehousing';
+import CounterSection from './components/CounterSection';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -14,7 +21,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicePage />} />
-          <Route path="/services/SeaFreight" element={<SeaFreight />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path="/services/Sea-Freight" element={<SeaFreight />} />
+          <Route path='/services/Air-Freight' element={<AirFreight />} />
+          <Route path='/services/Project-Cargo' element={<ProjectCargo />} />
+          <Route path='/services/Customs-Clearance' element={<CustomsClearance />} />
+          <Route path='/services/Inland-Transportation' element={<InlandService />} />
+          <Route path='/services/Warehousing-Distribution' element={<Warehousing />} />
         </Routes>
       </BrowserRouter>
     </>
