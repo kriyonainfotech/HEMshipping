@@ -21,7 +21,7 @@ const Header = () => {
                 </span>
               </div>
               <div className="flex flex-wrap items-center space-x-2 cursor-pointer hover:text-gray-200 transition-colors duration-200 poppins">
-                <IoMdMailUnread className="text-lg " />
+                <IoCall className="text-lg" />
                 <span className="text-sm hidden sm:inline">
                   JADEJA GIRIRAJSINH : +919825897999
                 </span>
