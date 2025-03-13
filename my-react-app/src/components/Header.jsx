@@ -32,7 +32,7 @@ const Header = () => {
               <FaLocationDot />
               <span className="text-sm hidden sm:inline">
                 201-202/212, Varunisha Crossway, Plot # 589, Ward 12-C,
-                Gandhidham - Kachchh - 370 201.
+                Gandhidham - Kachchh - 370201.
               </span>
             </div>
           </div>
