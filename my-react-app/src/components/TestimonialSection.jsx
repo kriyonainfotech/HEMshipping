@@ -47,8 +47,7 @@ const TestimonialSection = () => {
   };
 
   return (
-  
-    <section className="min-h-screen bg-sec mx-6 mt-36 rounded-xl pt-24 pb-12 px-4 relative flex items-center">
+    <section className="min-h-screen bg-sec mx-6 lg:mt-36 rounded-xl pt-24 pb-12 px-4 relative flex items-center">
       <div className="hidden lg:flex absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-transparent rounded-xl pb-20">
         <CounterSection />
       </div>
@@ -102,20 +101,22 @@ const TestimonialSection = () => {
               className="bg-gray-200 rounded-xl p-12 text-gray-900"
             >
               {/* Client Info */}
-              <div className="flex justify-between border-b border-gray-300 pb-6 mb-8">
+              <div className="flex flex-col lg:flex-row lg:justify-between border-b border-gray-300 pb-6 mb-8">
+                {/* Testimonial Author */}
                 <div>
                   <h3 className="text-2xl font-semibold poppins">
-                    {testimonials[activeIndex].name}
+                    {testimonials[activeIndex]?.name}
                   </h3>
                   <p className="text-gray-600">
-                    {testimonials[activeIndex].role}
+                    {testimonials[activeIndex]?.role}
                   </p>
                 </div>
 
-                <div className="flex gap-1 text-yellow-600 text-3xl">
+                {/* Star Rating (Comes Down on Small Screens) */}
+                <div className="flex gap-1 text-yellow-600 text-3xl mt-2 lg:mt-0">
                   {[...Array(5)].map((_, i) => (
                     <span key={i}>
-                      {i < testimonials[activeIndex].rating ? "★" : "☆"}
+                      {i < (testimonials[activeIndex]?.rating || 0) ? "★" : "☆"}
                     </span>
                   ))}
                 </div>

@@ -9,25 +9,35 @@ import AirFreight from './pages/AirFreight';
 import ProjectCargo from './pages/ProjectCargo';
 import CustomsClearance from './pages/CustomsClearance';
 import InlandService from './pages/Inland';
-import Warehousing from './pages/Warehousing';
-import CounterSection from './components/CounterSection';
+import Warehousing from "./pages/Warehousing";
 import Contact from './pages/Contact';
+import ScrollToTop from "./components/ScrolltoTop";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicePage />} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/services/Sea-Freight" element={<SeaFreight />} />
-          <Route path='/services/Air-Freight' element={<AirFreight />} />
-          <Route path='/services/Project-Cargo' element={<ProjectCargo />} />
-          <Route path='/services/Customs-Clearance' element={<CustomsClearance />} />
-          <Route path='/services/Inland-Transportation' element={<InlandService />} />
-          <Route path='/services/Warehousing-Distribution' element={<Warehousing />} />
+          <Route path="/services/Air-Freight" element={<AirFreight />} />
+          <Route path="/services/Project-Cargo" element={<ProjectCargo />} />
+          <Route
+            path="/services/Customs-Clearance"
+            element={<CustomsClearance />}
+          />
+          <Route
+            path="/services/Inland-Transportation"
+            element={<InlandService />}
+          />
+          <Route
+            path="/services/Warehousing-Distribution"
+            element={<Warehousing />}
+          />
         </Routes>
       </BrowserRouter>
     </>

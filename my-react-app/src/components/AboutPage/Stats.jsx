@@ -4,12 +4,11 @@ import {
   useInView,
   useMotionValue,
   useTransform,
-  useMotionTemplate,
   animate,
 } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-const Stats = () => {
+const Stats = ({ stats }) => {
   const controls = useAnimation();
   const statsRef = useRef(null);
   const statsInView = useInView(statsRef, { once: true });
@@ -20,39 +19,37 @@ const Stats = () => {
     }
   }, [statsInView, controls]);
 
-  const stats = [
-    { number: 15, label: "Years Experience" },
-    { number: 98, label: "On-Time Delivery" },
-    { number: 5000, label: "Monthly Containers" },
-    { number: 150, label: "Global Partners" },
-  ];
+  // Dynamically set grid columns based on stats length
+  const gridCols = stats.length === 3 ? "md:grid-cols-3" : "md:grid-cols-4";
 
   return (
     <motion.div
       ref={statsRef}
       initial={{ opacity: 0 }}
       animate={controls}
-      className="grid md:grid-cols-4 gap-8 mt-20 text-center"
+      className={`grid ${gridCols} gap-8 text-center`}
     >
       {stats.map((stat, index) => {
-        // Create a motion value
         const count = useMotionValue(0);
         const rounded = useTransform(count, (latest) => Math.round(latest));
-        const formatted = useMotionTemplate`${rounded}+`;
 
         useEffect(() => {
           if (statsInView) {
-            animate(count, stat.number, { duration: 1.5 });
+            animate(count, stat.number, { duration: 1.5, ease: "easeOut" });
           }
         }, [statsInView, count, stat.number]);
 
         return (
-          <div key={index} className="p-6 border-b-4 border-cyan-200">
-            <motion.div className="text-4xl font-bold text-cyan-900 mb-2">
-              <motion.span>{formatted}</motion.span>
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.05 }}
+            className="px-4 py-4 bg-cyan-800 rounded-lg shadow-lg"
+          >
+            <motion.div className="text-4xl font-bold mb-2">
+              <motion.span>{rounded}</motion.span>+
             </motion.div>
-            <div className="text-cyan-700">{stat.label}</div>
-          </div>
+            <div className="text-gray-200">{stat.label}</div>
+          </motion.div>
         );
       })}
     </motion.div>

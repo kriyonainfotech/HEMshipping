@@ -16,7 +16,7 @@ const AboutPage = () => {
         <section className="relative h-[550px] w-full">
           <div className="absolute inset-0">
             <img
-              src="/port/port1.jpg"
+              src="/port/port1.webp"
               alt="Port Operations"
               className="w-full h-full object-cover"
             />
@@ -29,10 +29,10 @@ const AboutPage = () => {
             className="relative h-full flex items-center justify-center text-center"
           >
             <div className="text-white max-w-2xl ps-14 text-start">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <h1 className="text-4xl space md:text-6xl font-bold mb-6 text-center">
                 Our Journey in Global Logistics
               </h1>
-              <p className="text-xl">
+              <p className="text-xl text-center">
                 Pioneering Excellence at Kandla & Mundra Ports
               </p>
             </div>

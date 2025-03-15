@@ -50,10 +50,7 @@ const SeaFreight = () => {
             muted
             playsInline
           >
-            <source
-              src="/port/sea.mp4"
-              type="video/mp4"
-            />
+            <source src="/port/sea.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/60 to-cyan-900/20"></div>
           <motion.h1
@@ -97,7 +94,7 @@ const SeaFreight = () => {
               <motion.div className="relative h-72 md:h-80 text-white rounded-xl overflow-hidden group">
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-                  style={{ backgroundImage: "url('/port/twomen.jpg')" }}
+                  style={{ backgroundImage: "url('/port/twomen.webp')" }}
                 ></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
                 <div className="absolute bottom-0 w-full p-6 text-center">
@@ -139,12 +136,15 @@ const SeaFreight = () => {
 
             {/* Right Side: Main Content */}
             <div className="w-full md:w-3/4 space-y-6 min-w-0">
-              <motion.div className="flex flex-col justify-between gap-8" initial={{ opacity: 0, x: 50 }}
+              <motion.div
+                className="flex flex-col justify-between gap-8"
+                initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}>
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 <div className="relative w-full">
                   <motion.img
-                    src="/port/port4.jpg"
+                    src="/port/port4.webp"
                     alt="Sea Freight"
                     className="rounded-xl shadow-2xl w-full h-[250px] md:h-[500px] object-cover max-w-full"
                   />
@@ -212,11 +212,13 @@ const SeaFreight = () => {
         {/* Stats Section */}
         <section className="py-28 bg-gradient-to-r from-cyan-900 to-cyan-700 text-white">
           <div className="container mx-auto px-4">
-            <motion.div className="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-center"
+            <motion.div
+              className="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-center"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ staggerChildren: 0.2 }}
-              viewport={{ once: true }}>
+              viewport={{ once: true }}
+            >
               {[
                 "Countries Served",
                 "Annual Shipments",
@@ -285,11 +287,13 @@ const SeaFreight = () => {
           <div className="container mx-auto px-4 rounded-xl">
             <div className="container mx-auto px-6">
               {/* Heading */}
-              <h2 className="text-4xl text-center space font-bold">Get in Touch</h2>
+              <h2 className="text-4xl text-center space font-bold">
+                Get in Touch
+              </h2>
               <p className="mt-4 text-md md:text-lg lato text-center text-gray-200 max-w-2xl mx-auto">
                 Need reliable logistics solutions? Our team is here to help with
-                all your shipping and freight needs. Contact us today for a custom
-                quote!
+                all your shipping and freight needs. Contact us today for a
+                custom quote!
               </p>
 
               {/* CTA Buttons */}
@@ -299,11 +303,15 @@ const SeaFreight = () => {
   before:absolute before:h-0 before:w-0 before:rounded-full before:bg-orange-300/40 before:duration-500 before:ease-out
   hover:shadow-orange-900 hover:before:h-56 hover:before:w-56 rounded-xl"
                 >
-                  <span className="relative z-10 font-semibold">Get a Quote</span>
+                  <span className="relative z-10 font-semibold">
+                    Get a Quote
+                  </span>
                 </button>
 
                 <button className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden border-2 border-white text-white shadow-lg transition-all hover:bg-white hover:text-cyan-900 rounded-xl">
-                  <span className="relative z-10 font-semibold">Contact Us</span>
+                  <span className="relative z-10 font-semibold">
+                    Contact Us
+                  </span>
                 </button>
               </div>
             </div>

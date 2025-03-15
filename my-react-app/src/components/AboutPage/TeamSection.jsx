@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import Stats from "./Stats";
 
+
 const TeamSection = () => {
   const roles = [
     {
@@ -31,6 +32,13 @@ const TeamSection = () => {
       detail: "150+ international partner connections",
       photo: "https://randomuser.me/api/portraits/men/12.jpg",
     },
+  ];
+
+  const stats = [
+    { number: 15, label: "Years Experience" },
+    { number: 98, label: "On-Time Delivery" },
+    { number: 5000, label: "Monthly Containers" },
+    { number: 150, label: "Global Partners" },
   ];
 
   const statsRef = useRef(null);
@@ -64,7 +72,7 @@ const TeamSection = () => {
             <GrServicePlay className="font-bold text-cyan-900 text-lg" />
             Our Team
           </h2>
-          
+
           <p className="text-4xl space font-semibold text-gray-800 max-w-2xl mx-auto">
             Specialized teams driving <br />{" "}
             <span className="text-cyan-900">Hem's port </span>logistics success
@@ -113,7 +121,26 @@ const TeamSection = () => {
           ))}
         </div>
 
-        <Stats />
+        <div className="bg-cyan-900 text-white rounded-xl p-12 mt-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl space font-bold mb-8">
+              Why Partner With HEM?
+            </h2>
+            <p className="text-lg text-gray-200 mb-6">
+              At HEM Shipping, we prioritize efficiency, reliability, and
+              seamless logistics solutions. Our expertise ensures your cargo
+              reaches its destination on time, every time.
+            </p>
+
+            {/* Dynamic Counter Stats */}
+            <Stats stats={stats} />
+
+            <p className="mt-8 text-gray-300">
+              Join our trusted network and experience world-class shipping &
+              logistics services.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

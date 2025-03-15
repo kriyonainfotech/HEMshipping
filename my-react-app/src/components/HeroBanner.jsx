@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const HeroBanner = () => {
   return (
@@ -28,12 +29,13 @@ const HeroBanner = () => {
             </h1>
 
             <div className="mt-12 flex justify-center items-center gap-6">
-              <button class="relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-pri text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#f6b98a]/40 before:duration-500 before:ease-out hover:shadow-orange-900 hover:before:h-56 hover:before:w-56 rounded-xl">
+              <Link
+                to={"/contact"}
+                class="relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-pri text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#f6b98a]/40 before:duration-500 before:ease-out hover:shadow-orange-900 hover:before:h-56 hover:before:w-56 rounded-xl"
+              >
                 <span class="relative z-10">Get a Quote</span>
-              </button>
-
+              </Link>
             </div>
-
           </div>
         </div>
       </div>

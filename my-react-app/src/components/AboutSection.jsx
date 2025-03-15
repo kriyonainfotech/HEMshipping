@@ -128,8 +128,16 @@
 // export default AboutSection;
 import { motion } from "framer-motion";
 import { FaAnchor, FaWarehouse, FaShip, FaCertificate } from "react-icons/fa";
+import Stats from "../components/AboutPage/Stats";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
+  const statsData = [
+    { number: 15, label: "Years Experience" },
+    { number: 98, label: "On-Time Delivery" },
+    { number: 5000, label: "Containers Handled" },
+  ];
+
   return (
     <section className="bg-white py-20 px-4">
       <div className="container mx-auto">
@@ -151,10 +159,13 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           {/* Kandla Port */}
           <motion.div
-            whileHover={{ y: -5 }}
-            className="bg-cyan-50 rounded-xl p-8"
+            whileHover={{
+              scale: 1.01,
+              boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+            }}
+            className="bg-cyan-50 rounded-xl p-8 "
           >
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-6 ">
               <div className="bg-cyan-600 p-4 rounded-lg">
                 <FaAnchor className="text-2xl text-white" />
               </div>
@@ -172,7 +183,10 @@ const AboutSection = () => {
 
           {/* Mundra Port */}
           <motion.div
-            whileHover={{ y: -5 }}
+            whileHover={{
+              scale: 1.01,
+              boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+            }}
             className="bg-cyan-50 rounded-xl p-8"
           >
             <div className="flex items-center gap-4 mb-6">
@@ -215,6 +229,11 @@ const AboutSection = () => {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{
+                scale: 1.01,
+                y: -5, // Moves up by 5px
+                boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+              }}
               className="text-center p-6 bg-white shadow-lg rounded-xl"
             >
               {/* Center Icon */}
@@ -227,42 +246,27 @@ const AboutSection = () => {
           ))}
         </div>
 
-        {/* Why Choose Us */}
         <div className="bg-cyan-900 text-white rounded-xl p-12">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-8 poppins">
               Why Partner With HEM?
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { number: "15+", label: "Years Experience" },
-                { number: "98%", label: "On-Time Delivery" },
-                { number: "5000+", label: "Containers Handled" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  className="p-4"
-                >
-                  <div className="text-4xl font-bold mb-2 space">
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-200">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
+            <Stats stats={statsData} /> {/* Pass stats dynamically */}
           </div>
         </div>
 
         {/* CTA */}
         <div className="text-center mt-20">
           <motion.button whileHover={{ scale: 1.05 }}>
-            <button class="relative flex items-center justify-center overflow-hidden bg-pri text-white px-8 py-4 text-lg font-semibold shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#f6b98a]/40 before:duration-500 before:ease-out hover:shadow-orange-900 hover:before:h-56 hover:before:w-56 rounded-xl">
+            <Link
+              to={"/contact"}
+              class="relative flex items-center justify-center overflow-hidden bg-pri text-white px-8 py-4 text-lg font-semibold shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#f6b98a]/40 before:duration-500 before:ease-out hover:shadow-orange-900 hover:before:h-56 hover:before:w-56 rounded-xl"
+            >
               <span class="relative z-10">
                 {" "}
                 Get Customized Logistics Solutions
               </span>
-            </button>
+            </Link>
           </motion.button>
         </div>
       </div>

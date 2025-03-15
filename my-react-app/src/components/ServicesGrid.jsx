@@ -1,6 +1,7 @@
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { GrServicePlay } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 const ServicesSection = () => {
   const [activeService, setActiveService] = useState(0);
@@ -30,7 +31,7 @@ const ServicesSection = () => {
     // },
     {
       title: "Inland Transportation",
-      image: "/airport-1152251_1280.jpg",
+      image: "/services/trucking.webp",
       description:
         "Efficient transport services to move cargo to its destination.",
     },
@@ -99,9 +100,12 @@ const ServicesSection = () => {
               whileHover={{ scale: 1.05 }}
               className="flex justify-end md:w-1/5"
             >
-              <button class="relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-pri text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#f6b98a]/40 before:duration-500 before:ease-out hover:shadow-orange-900 hover:before:h-56 hover:before:w-56 rounded-xl">
+              <Link
+                to={"/services"}
+                class="relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-pri text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#f6b98a]/40 before:duration-500 before:ease-out hover:shadow-orange-900 hover:before:h-56 hover:before:w-56 rounded-xl"
+              >
                 <span class="relative z-10">All Services</span>
-              </button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -110,21 +114,7 @@ const ServicesSection = () => {
         <div className="mx-auto">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Image Container */}
-            {/* <div className="lg:w-2/5 h-[29rem] relative overflow-hidden rounded-xl">
-              <AnimatePresence mode='wait'>
-                <motion.img
-                  key={activeService}
-                  src={services[activeService].image}
-                  alt={services[activeService].title}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.05 }}
-                  transition={{ duration: 0.5 }}
-                  className="w-full h-full object-cover absolute inset-0"
-                />
-                <div className='service-three-shape z-50'></div>
-              </AnimatePresence>
-            </div> */}
+
             <div className="lg:w-2/5 h-[29rem] relative overflow-hidden rounded-xl">
               {services.map((service, index) => (
                 <motion.img

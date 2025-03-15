@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const ParallaxSection = () => {
   return (
@@ -6,7 +7,7 @@ const ParallaxSection = () => {
       {/* Parallax Background */}
       <div className="absolute inset-0 z-0">
         <div
-                  className="w-full h-full bg-[url('/port/hamburg-6849995_1280.jpg')] 
+          className="w-full h-full bg-[url('/port/hamburg-6849995_1280.jpg')] 
           bg-cover bg-center bg-fixed"
         >
           <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/30 to-cyan-800/50" />
@@ -47,12 +48,15 @@ const ParallaxSection = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-                      transition={{ delay: 0.7 }}
-                      className="text-center flex justify-center items-center gap-6"
+            transition={{ delay: 0.7 }}
+            className="text-center flex justify-center items-center gap-6"
           >
-            <button class="relative flex h-[50px] w-72 px-8 py-6 text-lg text-center items-center justify-center overflow-hidden bg-pri text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#f6b98a]/40 before:duration-500 before:ease-out hover:shadow-orange-900 hover:before:h-56 hover:before:w-56 rounded-lg">
+            <Link
+              to={"/services"}
+              class="relative flex h-[50px] w-72 px-8 py-6 text-lg text-center items-center justify-center overflow-hidden bg-pri text-white shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#f6b98a]/40 before:duration-500 before:ease-out hover:shadow-orange-900 hover:before:h-56 hover:before:w-56 rounded-lg"
+            >
               <span class="relative z-10">Explore Our Capabilities</span>
-            </button>
+            </Link>
           </motion.div>
         </div>
       </motion.div>
