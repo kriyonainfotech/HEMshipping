@@ -11,7 +11,7 @@ import CustomsClearance from './pages/CustomsClearance';
 import InlandService from './pages/Inland';
 import Warehousing from "./pages/Warehousing";
 import Contact from './pages/Contact';
-import ScrollToTop from "./components/ScrolltoTop";
+import ScrollToTop from "../src/components/ScrollToTop";
 
 function App() {
   return (
