@@ -15,14 +15,14 @@ const TeamSection = () => {
       icon: <FaShippingFast className="text-3xl" />,
       name: "Harshrajsinh Zala",
       expertise: "Director ",
-      detail: "Contact Information (if needed) : +91 7435918212",
+      detail: "Contact Information : +91 7435918212",
       photo: "https://randomuser.me/api/portraits/men/10.jpg",
     },
     {
       icon: <FaClipboardCheck className="text-3xl" />,
       name: "Jadeja Girirajisnh",
       expertise: "Director ",
-      detail: "Contact Information (if needed) : +91 9825897999",
+      detail: "Contact Information : +91 9825897999",
       photo: "https://randomuser.me/api/portraits/women/10.jpg",
     },
   ];
