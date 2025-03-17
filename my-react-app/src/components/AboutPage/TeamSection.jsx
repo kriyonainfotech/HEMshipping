@@ -13,24 +13,17 @@ const TeamSection = () => {
   const roles = [
     {
       icon: <FaShippingFast className="text-3xl" />,
-      name: "Port Operations Team",
-      expertise: "Cargo Handling & Customs Experts",
-      detail: "24/7 operations management at Kandla & Mundra ports",
+      name: "Harshrajsinh Zala",
+      expertise: "Director ",
+      detail: "Contact Information (if needed) : +91 7435918212",
       photo: "https://randomuser.me/api/portraits/men/10.jpg",
     },
     {
       icon: <FaClipboardCheck className="text-3xl" />,
-      name: "Compliance Specialists",
-      expertise: "Regulatory & Documentation",
-      detail: "Ensuring seamless international trade compliance",
+      name: "Jadeja Girirajisnh",
+      expertise: "Director ",
+      detail: "Contact Information (if needed) : +91 9825897999",
       photo: "https://randomuser.me/api/portraits/women/10.jpg",
-    },
-    {
-      icon: <FaMapMarkedAlt className="text-3xl" />,
-      name: "Logistics Network",
-      expertise: "Global Supply Chain Management",
-      detail: "150+ international partner connections",
-      photo: "https://randomuser.me/api/portraits/men/12.jpg",
     },
   ];
 
@@ -80,7 +73,7 @@ const TeamSection = () => {
         </motion.div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {roles.map((role, index) => (
             <motion.div
               key={index}
@@ -91,7 +84,7 @@ const TeamSection = () => {
               className="group relative bg-white rounded-xl p-8 border-2 border-cyan-100 hover:shadow-lg transition-all"
             >
               {/* Profile Image */}
-              <motion.div
+              {/* <motion.div
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 className="absolute -top-8 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg"
               >
@@ -100,7 +93,7 @@ const TeamSection = () => {
                   alt={role.name}
                   className="w-full h-full object-cover"
                 />
-              </motion.div>
+              </motion.div> */}
 
               {/* Content */}
               <div className="pt-16 text-center">
