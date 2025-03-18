@@ -7,6 +7,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io";
 import { MdOutlineWhatsapp } from "react-icons/md";
 import { useState } from "react";
+import { FaLinkedinIn } from "react-icons/fa6";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -275,13 +276,26 @@ const Contact = () => {
                   <h3 className="text-2xl font-bold mb-6">Follow Us</h3>
                   <div className="flex gap-6">
                     {[
-                      { icon: <FaFacebookF />, name: "Facebook" },
-                      { icon: <IoLogoInstagram />, name: "Instagram" },
-                      { icon: <MdOutlineWhatsapp />, name: "WhatsApp" },
+                      {
+                        icon: <FaFacebookF />,
+                        name: "Facebook",
+                        path: "https://www.facebook.com/profile.php?id=61563315823344&mibextid=wwXIfr&mibextid=wwXIfr",
+                      },
+                      {
+                        icon: <IoLogoInstagram />,
+                        name: "Instagram",
+                        path: "https://www.instagram.com/hemshippingandlogistics?igsh=MW9mdGhocjE2Z2UwMQ%3D%3D&utm_source=qr",
+                      },
+                      {
+                        icon: <FaLinkedinIn />,
+                        name: "LinkedIn",
+                        path: "https://www.linkedin.com/company/hem-shipping-and-logistics-hsal/",
+                      },
                     ].map((social, index) => (
                       <motion.a
                         key={index}
-                        href="#"
+                        href={social.path}
+                        target="_blank"
                         className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center text-xl hover:bg-white hover:text-cyan-900 transition-colors"
                         whileHover={{ scale: 1.1 }}
                       >

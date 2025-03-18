@@ -1,4 +1,7 @@
 import React from 'react';
+import { FaFacebookF } from "react-icons/fa";
+import { IoLogoInstagram } from "react-icons/io";
+import { FaLinkedinIn } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -14,7 +17,7 @@ const Footer = () => {
                 alt="Company Logo"
                 className="w-42 h-auto"
               />
-              <p className="text-sec font-semibold underline montserrat tracking-wide capitalize text-sm pt-3">
+              <p className="text-sec uppercase font-semibold underline montserrat tracking-wide text-sm pt-3">
                 Honety.Integrity.value
               </p>
             </div>
@@ -29,28 +32,22 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex space-x-4 mt-4">
               <a
-                href="#"
-                className="text-white hover:text-blue-300 transition-colors"
+                href="https://www.instagram.com/hemshippingandlogistics?igsh=MW9mdGhocjE2Z2UwMQ%3D%3D&utm_source=qr"
+                className="text-gray-800 text-2xl hover:text-cyan-800 transition-colors border-2 border-gray-400 rounded-full p-2 flex items-center justify-center w-12 h-12"
               >
-                
+                <IoLogoInstagram />
               </a>
               <a
-                href="#"
-                className="text-white hover:text-blue-300 transition-colors"
+                href="https://www.facebook.com/profile.php?id=61563315823344&mibextid=wwXIfr&mibextid=wwXIfr"
+                className="text-gray-800 text-2xl hover:text-cyan-800 transition-colors border-2 border-gray-400 rounded-full p-2 flex items-center justify-center w-12 h-12"
               >
-                
+                <FaFacebookF />
               </a>
               <a
-                href="#"
-                className="text-white hover:text-blue-300 transition-colors"
+                href="https://www.linkedin.com/company/hem-shipping-and-logistics-hsal/"
+                className="text-gray-800 text-2xl hover:text-cyan-800 transition-colors border-2 border-gray-400 rounded-full p-2 flex items-center justify-center w-12 h-12"
               >
-                
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-blue-300 transition-colors"
-              >
-                
+                <FaLinkedinIn />
               </a>
             </div>
           </div>
