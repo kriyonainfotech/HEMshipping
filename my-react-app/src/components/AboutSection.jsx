@@ -151,7 +151,8 @@ const AboutSection = () => {
             HEM Shipping & Logistics
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Your Trusted Partner in Kandla & Mundra Port Operations
+            Reliable <Link to={"/services"}>Freight Services</Link> at Kandla &
+            Mundra
           </p>
         </motion.div>
 
@@ -213,16 +214,19 @@ const AboutSection = () => {
               icon: <FaWarehouse className="text-4xl" />,
               title: "Warehousing",
               text: "Secure storage solutions with real-time inventory tracking",
+              link: "/services/Warehousing-Distribution",
             },
             {
               icon: <FaShip className="text-4xl" />,
               title: "Freight Forwarding",
               text: "Multimodal transport coordination across air, sea & land",
+              link: "/services/Sea-Freight",
             },
             {
               icon: <FaCertificate className="text-4xl" />,
               title: "Customs Clearance",
               text: "Streamlined documentation and regulatory compliance",
+              link: "/services/Customs-Clearance",
             },
           ].map((service, index) => (
             <motion.div
@@ -237,11 +241,13 @@ const AboutSection = () => {
               className="text-center p-6 bg-white shadow-lg rounded-xl"
             >
               {/* Center Icon */}
-              <div className="flex justify-center items-center text-cyan-600 mb-4">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.text}</p>
+              <Link to={`${service.link}`}>
+                <div className="flex justify-center items-center text-cyan-600 mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-gray-600">{service.text}</p>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -259,7 +265,7 @@ const AboutSection = () => {
         <div className="text-center mt-20">
           <motion.button whileHover={{ scale: 1.05 }}>
             <Link
-              to={"/contact"}
+              to={"/about-hemshipping"}
               class="relative flex items-center justify-center overflow-hidden bg-pri text-white px-8 py-4 text-lg font-semibold shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#f6b98a]/40 before:duration-500 before:ease-out hover:shadow-orange-900 hover:before:h-56 hover:before:w-56 rounded-xl"
             >
               <span class="relative z-10">

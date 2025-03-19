@@ -14,7 +14,7 @@ const Footer = () => {
             <div>
               <img
                 src="/logo2-Photoroom.png"
-                alt="Company Logo"
+                alt="Hem Shipping Logistics at Kandla & Mundra Port"
                 className="w-42 h-auto"
               />
               <p className="text-sec uppercase font-semibold underline montserrat tracking-wide text-sm pt-3">
@@ -25,7 +25,7 @@ const Footer = () => {
             {/* Image */}
             <img
               src="/Global_network_generated-Photoroom.png"
-              alt="Global Coverage"
+              alt="Hem Shipping Logistics at Kandla & Mundra Port"
               className="w-full max-w-xs h-auto object-cover"
             />
 

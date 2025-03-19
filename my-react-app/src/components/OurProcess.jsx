@@ -40,7 +40,6 @@ const OurProcess = () => {
   const isInView = useInView(ref, { margin: "-100px", once: true });
 
   return (
-
     <section className="w-full py-20 px-4 bg-white relative">
       {/* Full-width Dotted Line */}
       <motion.div
@@ -79,7 +78,7 @@ const OurProcess = () => {
               <motion.div className="mb-10 transition-transform duration-300 flex flex-col items-center justify-center">
                 <img
                   src={step.icon}
-                  alt=""
+                  alt="Hem Shipping Logistics at Kandla & Mundra Port"
                   className="w-16 h-16 object-contain"
                 />
               </motion.div>
@@ -102,7 +101,6 @@ const OurProcess = () => {
           ))}
         </div>
       </div>
-
     </section>
   );
 };

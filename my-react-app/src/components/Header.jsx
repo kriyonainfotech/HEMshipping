@@ -43,7 +43,11 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to={"/"}>
-              <img src="/logo2.JPG" alt="Shipping Logo" className="h-22" />
+              <img
+                src="/logo2.JPG"
+                alt="Hem Shipping Logistics at Kandla & Mundra Port"
+                className="h-22"
+              />
             </Link>
           </div>
 
@@ -66,9 +70,11 @@ const Header = () => {
               Services
             </Link>
             <Link
-              to={"/about"}
+              to={"/about-hemshipping"}
               className={`font-semibold ${
-                location.pathname === "/about" ? "text-pri" : "text-gray-700"
+                location.pathname === "/about-hemshipping"
+                  ? "text-pri"
+                  : "text-gray-700"
               } hover:text-cyan-800`}
             >
               About Us

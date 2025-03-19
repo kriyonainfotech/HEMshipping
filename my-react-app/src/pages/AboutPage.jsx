@@ -28,12 +28,14 @@ const AboutPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="relative h-full flex items-center justify-center text-center"
           >
-            <div className="text-white max-w-2xl ps-14 text-start">
+            <div className="text-white max-w-6xl ps-14 text-start">
               <h1 className="text-4xl space md:text-6xl font-bold mb-6 text-center">
-                Our Journey in Global Logistics
+                About Hem Shipping & Logistics
               </h1>
               <p className="text-xl text-center">
-                Pioneering Excellence at Kandla & Mundra Ports
+                Trusted shipping & logistics company at Kandla & Mundra ports,
+                offering freight forwarding, customs clearance, and supply chain
+                solutions.
               </p>
             </div>
           </motion.div>

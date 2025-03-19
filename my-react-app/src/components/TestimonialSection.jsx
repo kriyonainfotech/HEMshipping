@@ -134,7 +134,7 @@ const TestimonialSection = () => {
                 <div className="flex items-center gap-4">
                   <img
                     src={testimonials[activeIndex].photo}
-                    alt={testimonials[activeIndex].name}
+                    alt="Hem Shipping Logistics at Kandla & Mundra Port"
                     className="w-16 h-16 rounded-full object-cover"
                   />
                 </div>

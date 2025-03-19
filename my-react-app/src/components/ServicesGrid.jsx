@@ -120,7 +120,7 @@ const ServicesSection = () => {
                 <motion.img
                   key={index}
                   src={service.image}
-                  alt={service.title}
+                  alt="Hem Shipping Logistics at Kandla & Mundra Port"
                   className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
                     activeService === index ? "opacity-100" : "opacity-0"
                   }`}

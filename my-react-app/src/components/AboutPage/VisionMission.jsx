@@ -38,7 +38,7 @@ const VisionMission = () => {
               <div className="overflow-hidden rounded-xl shadow-lg mx-auto max-w-2xl">
                 <img
                   src="/port/vision.webp"
-                  alt="Our Vision"
+                  alt="Hem Shipping Logistics at Kandla & Mundra Port"
                   className="w-full h-auto object-cover hover:scale-105 transition duration-300"
                 />
               </div>
@@ -57,7 +57,7 @@ const VisionMission = () => {
               <div className="overflow-hidden rounded-xl shadow-lg mx-auto max-w-2xl">
                 <img
                   src="/port/mission.webp"
-                  alt="Our Mission"
+                  alt="Hem Shipping Logistics at Kandla & Mundra Port"
                   className="w-full h-auto object-cover hover:scale-105 transition duration-300"
                 />
               </div>
