@@ -113,7 +113,7 @@ const Footer = () => {
         <div className="border-t border-gray-300 mt-8 pt-6 text-center text-gray-400">
           <p>© 2024 Shipping Logistics. All rights reserved.</p>
         </div>
-        <div className="text-right">
+        <div className="text-center">
           <p className="text-xs text-gray-500">
             Developed by{" "}
             <a
